@@ -1,0 +1,6 @@
+/.settings/
+.idea
+.idea/httpRequests
+*.iml
+.gradle
+build

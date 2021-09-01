@@ -1,4 +1,4 @@
-package io.template;
+package io.app;
 
 /**
  * @author GoodforGod

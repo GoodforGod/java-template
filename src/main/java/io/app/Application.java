@@ -1,4 +1,4 @@
-package io.template;
+package io.app;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public class Application {
 
@@ -16,7 +17,7 @@ public class Application {
 
     public static void main(String[] args) {
         final Logger logger = LoggerFactory.getLogger(Application.class);
-        final Collection<String> expected = List.of("SECURITY_ENABLED");
+        final Collection<String> expected = Set.of("SECURITY_ENABLED");
 
         System.getenv().entrySet().stream()
                 .filter(e -> expected.contains(e.getKey()))

@@ -1,12 +1,11 @@
-package io.app;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package io.goodforgod.template;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Application {
 
@@ -19,8 +18,9 @@ public class Application {
         final Logger logger = LoggerFactory.getLogger(Application.class);
         final Collection<String> expected = Set.of("SECURITY_ENABLED");
 
-        System.getenv().entrySet().stream()
-                .filter(e -> expected.contains(e.getKey()))
-                .forEach(e -> logger.debug("{}={}", e.getKey(), e.getValue()));
+        final Map<String, String> envs = System.getenv();
+        for (String env : expected) {
+            logger.debug("{}={}", env, envs.get(env));
+        }
     }
 }

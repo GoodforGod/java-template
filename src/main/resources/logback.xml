@@ -16,5 +16,5 @@
         <appender-ref ref="ASYNC"/>
     </root>
 
-    <logger level="DEBUG" name="io.app.Application"/>
+    <logger level="DEBUG" name="io.goodforgod.template.Application"/>
 </configuration>

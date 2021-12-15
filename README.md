@@ -3,6 +3,7 @@
 Template for Java 11+ service.
 
 ## Features
+
 - Spotless for Code Style and Formatting.
 - .gitignore and .gitattributes for proper ignore and symbols check.
 - .editorconfig for simple configs code style and encoding UTF-8.

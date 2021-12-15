@@ -1,4 +1,4 @@
-# Package Files #
+### Package Files
 *.war
 *.nar
 *.ear
@@ -11,7 +11,7 @@
 build/
 target/
 
-# Idea generated files
+### Idea generated files
 .idea
 .settings/
 *.iml

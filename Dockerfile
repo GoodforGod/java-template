@@ -8,4 +8,4 @@ ADD $JAR_DIR/*.jar $APP_DIR/app.jar
 
 EXPOSE 8080/tcp
 
-CMD ["/bin/sh","-c","java -jar -Dfile.encoding=UTF-8 -Xms32m -Xss512k -XX:+ExitOnOutOfMemoryError -XX:+CompactStrings -XX:+UseContainerSupport -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC /opt/application/app.jar" ]
+CMD ["/bin/sh","-c","java -jar -Dfile.encoding=UTF-8 -Xms32m -Xss512k -XX:+ExitOnOutOfMemoryError -XX:+CompactStrings -XX:+UseContainerSupport -XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC /application/app.jar" ]

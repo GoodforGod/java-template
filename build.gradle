@@ -72,7 +72,7 @@ spotless {
         encoding("UTF-8")
         importOrder()
         removeUnusedImports()
-        eclipse("4.21.0").configFile("${projectDir}/codestyle.xml")
+        eclipse("4.21.0").configFile("${projectDir}/config/codestyle.xml")
     }
 }
 
@@ -84,6 +84,7 @@ shadowJar {
         attributes "Main-Class": mainClassName
         attributes "Implementation-Version": artifactVersion
         attributes "Build-Version": buildNumber
+        attributes "Build-Time": java.time.OffsetDateTime.now()
     }
 }
 

@@ -5,7 +5,7 @@ plugins {
 
     id "org.sonarqube" version "3.3"
     id "com.diffplug.spotless" version "6.0.4"
-    id "com.github.johnrengelman.shadow" version "7.0.0"
+    id "com.github.johnrengelman.shadow" version "7.1.0"
 }
 
 repositories {
@@ -20,15 +20,6 @@ version = artifactVersion
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
-spotless {
-    java {
-        encoding("UTF-8")
-        importOrder()
-        removeUnusedImports()
-        eclipse("4.21.0").configFile("${projectDir}/codestyle.xml")
-    }
-}
-
 configurations {
     all {
         resolutionStrategy {
@@ -39,7 +30,7 @@ configurations {
 
 dependencies {
     implementation "org.jetbrains:annotations:22.0.0"
-    implementation "ch.qos.logback:logback-classic:1.2.7"
+    implementation "ch.qos.logback:logback-classic:1.2.8"
 
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.2"
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.2"
@@ -73,6 +64,15 @@ test {
     reports {
         html.enabled(false)
         junitXml.enabled(false)
+    }
+}
+
+spotless {
+    java {
+        encoding("UTF-8")
+        importOrder()
+        removeUnusedImports()
+        eclipse("4.21.0").configFile("${projectDir}/codestyle.xml")
     }
 }
 

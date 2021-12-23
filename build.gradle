@@ -30,7 +30,7 @@ configurations {
 
 dependencies {
     implementation "org.jetbrains:annotations:22.0.0"
-    implementation "ch.qos.logback:logback-classic:1.2.8"
+    implementation "ch.qos.logback:logback-classic:1.2.9"
 
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.2"
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.2"

@@ -5,7 +5,7 @@ plugins {
 
     id "org.sonarqube" version "3.3"
     id "com.diffplug.spotless" version "6.1.0"
-    id "com.github.johnrengelman.shadow" version "7.1.0"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
 repositories {
@@ -14,6 +14,8 @@ repositories {
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
 }
 
+mainClassName = "io.goodforgod.template.Application"
+
 group = groupId
 version = artifactVersion
 
@@ -21,8 +23,9 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 dependencies {
-    implementation "org.jetbrains:annotations:22.0.0"
-    implementation "ch.qos.logback:logback-classic:1.2.10"
+    compileOnly "org.jetbrains:annotations:23.0.0"
+
+    implementation "ch.qos.logback:logback-classic:1.2.11"
 
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.2"
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.2"
@@ -64,11 +67,10 @@ spotless {
         encoding("UTF-8")
         importOrder()
         removeUnusedImports()
-        eclipse("4.21.0").configFile("${projectDir}/config/codestyle.xml")
+        eclipse("4.21.0").configFile("${rootDir}/config/codestyle.xml")
     }
 }
 
-mainClassName = "io.goodforgod.template.Application"
 jar.enabled(true)
 shadowJar {
     mergeServiceFiles()

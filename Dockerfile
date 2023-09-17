@@ -1,4 +1,4 @@
-FROM bellsoft/liberica-openjre-alpine-musl:17.0.1
+FROM bellsoft/liberica-openjre-alpine-musl:17.0.8
 
 ARG APP_DIR=/opt/application
 ARG BUILD_DIR=build/libs
@@ -13,7 +13,7 @@ ENTRYPOINT ["java", \
             "-Xss256k", \
             "-Xms32m", \
             "-XX:+UnlockExperimentalVMOptions", \
-            "-XX:+UseShenandoahGC", \
+            "-XX:+UseZGC", \
             "-XX:+ExitOnOutOfMemoryError", \
             "-XX:+UseContainerSupport", \
             "-XX:+CompactStrings", \
